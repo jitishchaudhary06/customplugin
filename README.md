@@ -1,9 +1,10 @@
 # Custom Post Type
 
-WordPress plugin that stores custom posts in its own database table.
+WordPress plugin that registers a real custom post type, with the same admin screen and database storage as normal posts.
 
-- Activate creates the table. Activate again recreates it.
-- Deactivate deletes the table.
-- Delete the plugin from the Plugins screen and the table is removed again.
-- Admin menu: **Custom Post Type** (add, edit, delete).
-- Frontend shortcode: `[custom_posts]`
+Posts are saved in `wp_posts`, extra fields in `wp_postmeta`, and categories/tags in the WordPress term tables.
+
+- Admin menu **Custom Post Type** uses the normal post editor, list, categories, and tags.
+- Each published post has its own frontend URL, plus an archive at `/custom-post/`.
+- Shortcode: `[custom_posts]`
+- Deleting the plugin from the Plugins screen removes these posts, categories, and tags.
